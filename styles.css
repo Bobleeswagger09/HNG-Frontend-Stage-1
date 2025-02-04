@@ -1,0 +1,205 @@
+/* Resetting margin and padding to ensure a consistent look */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #1a1a1a; /* Darker background for a sleek contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+/* Game Container */
+.game-container {
+  text-align: center;
+  background: #292929; /* Dark gray for a smooth UI */
+  border-radius: 10px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Title and Instructions */
+#gameInstructions h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #ffcc00; /* Sharingan orange */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#gameInstructions p {
+  font-size: 16px;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+/* Game Status */
+#gameStatus {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #ff6666;
+  min-height: 30px; /* Ensure space for status updates */
+}
+
+/* Color Box - Target Color */
+#colorBox {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  border-radius: 10px;
+  background-color: #000; /* Default to black */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+  transition: background-color 0.5s ease;
+}
+
+/* Color Options Buttons */
+.color-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.colorOption {
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.colorOption:hover {
+  transform: scale(1.15); /* Slight zoom effect */
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+.colorOption:focus {
+  outline: none;
+}
+.correct {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}
+
+/* Score Display */
+#scoreContainer {
+  font-size: 20px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* New Game Button */
+#newGameButton {
+  background-color: #ffcc00;
+  color: #292929;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#newGameButton:hover {
+  background-color: #ff9900;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .game-container {
+    padding: 20px;
+  }
+
+  .colorOption {
+    width: 65px;
+    height: 65px;
+  }
+
+  #colorBox {
+    width: 160px;
+    height: 160px;
+  }
+
+  #gameInstructions h2 {
+    font-size: 22px;
+  }
+
+  #scoreContainer {
+    font-size: 18px;
+  }
+
+  #newGameButton {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .colorOption {
+    width: 55px;
+    height: 55px;
+  }
+
+  #colorBox {
+    width: 130px;
+    height: 130px;
+  }
+
+  #gameInstructions h2 {
+    font-size: 18px;
+  }
+
+  #scoreContainer {
+    font-size: 16px;
+  }
+
+  #newGameButton {
+    font-size: 13px;
+    padding: 9px 16px;
+  }
+}
